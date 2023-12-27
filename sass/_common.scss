@@ -1,0 +1,55 @@
+body {
+    font-size: px-to-rem(16);
+    line-height: 1.4;
+    font-family: "capshift", sans-serif;
+    color: $black;
+    background-color: $bg-light-grey;
+}
+
+.main-heading {
+    h2 {
+        font-size: px-to-rem(20);
+        font-weight: 700;
+    }
+}
+
+.filter-list {
+    ul {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        margin-bottom: 0;
+
+        li {
+            padding: px-to-rem(5) px-to-rem(10);
+            border-radius: px-to-rem(4);
+            margin-right: px-to-rem(8);
+        }
+    }
+
+    p {
+        color: $primary;
+        font-weight: 700;
+        margin-bottom: 0;
+    }
+}
+
+// default button override css
+
+.btn-info {
+    color: $btn-info-color;
+    background-color: transparent;
+    border: 0;
+
+    &:hover {
+        background-color: $primary;
+        color: $white;
+    }
+
+    &:focus {
+        color: $btn-info-color;
+        background-color: transparent;
+        border: 0;
+    }
+}

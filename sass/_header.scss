@@ -1,0 +1,190 @@
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    .navbar {
+        padding-top: px-to-rem(15);
+        padding-bottom: px-to-rem(15);
+
+        &.bg-dark {
+            background-color: $secondary !important;
+        }
+
+        .header-content {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .navbar-brand {
+                margin-left: px-to-rem(10);
+                padding: 0;
+
+                img {
+                    height: px-to-rem(30);
+                    width: auto;
+                }
+            }
+
+            .navbar-nav {
+                .nav-link {
+                    i {
+                        font-size: px-to-rem(20);
+                        color: $white;
+
+                        &:hover {
+                            color: $primary;
+                        }
+                    }
+                }
+
+                .dropdown {
+                    a.nav-link {
+                        display: flex;
+                        align-items: center;
+
+                        span {
+                            color: $white;
+                            font-size: px-to-rem(14);
+                            margin-left: px-to-rem(5);
+                        }
+
+                        &:after {
+                            color: $white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // sidemenu
+
+    .offcanvas-body {
+        padding: 0;
+    }
+
+    .offcanvas-start {
+        top: px-to-rem(73);
+        width: px-to-rem(130);
+        border: 0;
+        box-shadow: 0px 2px 4px #ddd;
+    }
+
+    .offcanvas-header {
+        display: none;
+    }
+
+    .btn-info {
+        margin-top: px-to-rem(5);
+
+        i {
+            font-size: px-to-rem(20);
+        }
+    }
+
+    .side-menu {
+        position: fixed;
+        background-color: $white;
+        height: 100%;
+
+        ul {
+            margin-top: px-to-rem(20);
+            padding: 0;
+
+            li {
+                padding: px-to-rem(20);
+                list-style: none;
+                text-align: center;
+                position: relative;
+                cursor: pointer;
+
+                i {
+                    font-size: px-to-rem(30);
+                    color: $grey;
+                    font-weight: 500;
+                }
+
+                &:first-child {
+                    i {
+                        font-size: px-to-rem(40);
+                    }
+                }
+
+                p {
+                    margin-top: px-to-rem(12);
+                    color: $grey;
+                    font-size: px-to-rem(13);
+                    margin-bottom: 0;
+                    font-weight: 500;
+                }
+
+                &.active {
+                    border-left: 8px solid $tertiary;
+
+                    i {
+                        color: $tertiary;
+                    }
+
+                    p {
+                        font-weight: 700;
+                    }
+                }
+
+                &:after {
+                    content: "";
+                    position: absolute;
+                    left: 20px;
+                    bottom: 0;
+                    border-bottom: 2px solid $bg-light-grey;
+                    width: 70%;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 767.98px) {
+    .header {
+        .navbar {
+            .header-content {
+                width: auto;
+                flex: 1;
+                position: relative;
+
+                .navbar-collapse {
+                    position: absolute;
+                    top: 100%;
+                    right: 0;
+                    background-color: $secondary;
+                    padding: 0 px-to-rem(10);
+
+                    .navbar-nav {
+                        flex-direction: row;
+
+                        .dropdown {
+                            margin-left: px-to-rem(10);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 767.98px) {
+    .navbar-nav {
+        flex-direction: row;
+    }
+
+    .header {
+        .navbar {
+            .header-content {
+                width: auto;
+                flex: 1;
+                position: relative;
+            }
+        }
+    }
+}
